@@ -55,9 +55,9 @@ export class PartidaListComponent implements OnInit {
 
     this.partidasServ.savePartida(this.partida)
       .subscribe(
-        res => {
-          console.log(res);
-          this.router.navigate(['/tictactoe/add']);
+        (res: any) => {
+          console.log(res.message);
+          this.router.navigate(['/tictactoe/add', res.value.insertId]);
         },
         err => console.error(err)
       );

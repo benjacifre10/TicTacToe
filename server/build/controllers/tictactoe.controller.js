@@ -17,13 +17,22 @@ class TicTacToeController {
             return res.json(partidas[0]);
         });
     }
+    getById(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const id = req.params.id;
+            const conn = yield database_1.connect();
+            const partida = yield conn.query('SELECT * FROM partida WHERE id = ?', [id]);
+            return res.json(partida[0]);
+        });
+    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const newPartida = req.body;
             const conn = yield database_1.connect();
-            yield conn.query('INSERT INTO partida SET?', [newPartida]);
+            const result = yield conn.query('INSERT INTO partida SET?', [newPartida]);
             return res.json({
-                message: 'Partida Creada'
+                message: 'Partida Creada',
+                value: result[0]
             });
         });
     }

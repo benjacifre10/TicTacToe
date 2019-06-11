@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { connect } from '../database';
 import { Partida } from '../interfaces/partida.interface';
+import { json } from 'body-parser';
 
 class TicTacToeController {
     
@@ -10,12 +11,20 @@ class TicTacToeController {
         return res.json(partidas[0]);
     }
 
+    public async getById(req: Request, res: Response): Promise<Response> {
+        const id = req.params.id;
+        const conn = await connect();
+        const partida = await conn.query('SELECT * FROM partida WHERE id = ?', [id]);
+        return res.json(partida[0]);
+    }
+
     public async create(req: Request, res: Response): Promise<Response> {
         const newPartida: Partida = req.body;
         const conn = await connect();
-        await conn.query('INSERT INTO partida SET?', [newPartida]);
+        const result = await conn.query('INSERT INTO partida SET?', [newPartida]);
         return res.json({
-            message: 'Partida Creada'
+            message: 'Partida Creada',
+            value: result[0]
         });
     }
     

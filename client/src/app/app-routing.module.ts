@@ -15,7 +15,7 @@ const routes: Routes = [
     component: PartidaListComponent
   },
   {
-    path: 'tictactoe/add',
+    path: 'tictactoe/add/:id',
     component: PartidaFormComponent
   }
 ];

@@ -12,6 +12,7 @@ class TicTacToeRoutes {
     }
     config() {
         this.router.get('/', tictactoe_controller_1.default.get);
+        this.router.get('/:id', tictactoe_controller_1.default.getById);
         this.router.post('/', tictactoe_controller_1.default.create);
         this.router.put('/:id', tictactoe_controller_1.default.update);
     }
