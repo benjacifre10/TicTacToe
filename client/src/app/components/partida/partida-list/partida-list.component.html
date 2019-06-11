@@ -1,3 +1,21 @@
-<p>
-  partida-list works!
-</p>
+<div class="row">
+  <div class="col-md-4" *ngFor="let partida of partidas">
+    <div class="card text-center">
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        {{ partida.resultado }}
+      </div>
+      <p>Partida Creada {{ partida.creada | date: 'dd-MM-yyyy hh:mm:ss'}}</p>
+      <p>Partida Terminada {{ partida.terminada | date: 'dd-MM-yyyy hh:mm:ss' }} </p>
+    </div>
+  </div>
+</div>
+
+<br class="my-auto">
+
+<div class="row">
+  <button class="btn btn-info btn-block" (click)="savePartida()">
+    <i class="fas fa-plus-circle"></i>
+    Agregar Partida
+  </button>
+</div>
+
