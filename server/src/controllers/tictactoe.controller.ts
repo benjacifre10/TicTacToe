@@ -29,6 +29,8 @@ class TicTacToeController {
         });
     }
 
+    private 
+
 }
 
 const tictactoeController = new TicTacToeController();
