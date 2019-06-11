@@ -42,6 +42,7 @@ export class PartidaListComponent implements OnInit {
     this.partidasServ.getPartidas()
       .subscribe(
         (res: Partida[]) => {
+          console.log(res);
           this.partidas = res;
         },
         err => console.error(err)

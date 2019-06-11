@@ -26,6 +26,9 @@ export class PartidaFormComponent implements OnInit {
     casilla9: ''
   };
 
+  idValor: number;
+  partida2: Partida;
+
   constructor(
     private partidaServ: PartidasService,
     private router: Router,
@@ -33,6 +36,68 @@ export class PartidaFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const params = this.activeRoute.snapshot.params;
+    if (params.id) {
+      this.getPartida(params.id);
+    }
+  }
+
+  getPartida(id: string) {
+    this.partidaServ.getPartida(id)
+      .subscribe(
+        (res: Partida) => {
+          console.log(res);
+          this.partida = res[0];
+        },
+        err => console.error(err)
+      );
+  }
+
+  updatePartida(casillaId: number) {
+    delete this.partida.creada;
+    delete this.partida.terminada;
+    switch (casillaId) {
+      case 1:
+        this.partida.casilla1 = '1';
+        break;
+      case 2:
+        this.partida.casilla2 = '1';
+        break;
+      case 3:
+        this.partida.casilla3 = '1';
+        break;
+      case 4:
+        this.partida.casilla4 = '1';
+        break;
+      case 5:
+        this.partida.casilla5 = '1';
+        break;
+      case 6:
+        this.partida.casilla6 = '1';
+        break;
+      case 7:
+        this.partida.casilla7 = '1';
+        break;
+      case 8:
+        this.partida.casilla8 = '1';
+        break;
+      case 9:
+        this.partida.casilla9 = '1';
+        break;
+    }
+    this.partidaServ.updatePartida(this.partida.id, this.partida)
+      .subscribe(
+        (res: any) => {
+          console.log(res);
+          if (res.result > 0) {
+            console.log('termino supuestamente');
+            this.router.navigate(['/tictactoe']);
+          } else {
+            this.getPartida(res.value);
+          }
+        },
+        err => console.error(err)
+      );
   }
 
 }

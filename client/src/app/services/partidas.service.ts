@@ -17,7 +17,15 @@ export class PartidasService {
     return this.http.get(`${this.API_URI}/tictactoe`);
   }
 
+  getPartida(id: string) {
+    return this.http.get(`${this.API_URI}/tictactoe/${id}`);
+  }
+
   savePartida(partida: Partida) {
     return this.http.post(`${this.API_URI}/tictactoe`, partida);
+  }
+
+  updatePartida(id: string | number, updatedPartida: Partida): Observable<Partida> {
+    return this.http.put<Partida>(`${this.API_URI}/tictactoe/${id}`, updatedPartida);
   }
 }
