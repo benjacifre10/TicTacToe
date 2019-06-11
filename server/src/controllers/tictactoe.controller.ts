@@ -126,33 +126,27 @@ const calcularJugada = (partida: Partida) => {
 }
 
 const calcularResultado = (partida: Partida) => {
-    //verifico que este terminados los valores
-    let result = 0;
-    /*
-    } else return result;*/
     //termino el partido verifico resultado
-    if (result == 0) {
-        //8 combinatorias ganadores del jugador
-        if (partida.casilla1 == '1' && partida.casilla2 == '1' && partida.casilla3 == '1') return 1;
-        if (partida.casilla4 == '1' && partida.casilla5 == '1' && partida.casilla6 == '1') return 1;
-        if (partida.casilla7 == '1' && partida.casilla8 == '1' && partida.casilla9 == '1') return 1;
-        if (partida.casilla1 == '1' && partida.casilla4 == '1' && partida.casilla7 == '1') return 1;
-        if (partida.casilla2 == '1' && partida.casilla5 == '1' && partida.casilla8 == '1') return 1;
-        if (partida.casilla3 == '1' && partida.casilla6 == '1' && partida.casilla9 == '1') return 1;
-        if (partida.casilla1 == '1' && partida.casilla5 == '1' && partida.casilla9 == '1') return 1;
-        if (partida.casilla3 == '1' && partida.casilla5 == '1' && partida.casilla7 == '1') return 1;
-        //8 combinatorias ganadores del jugador
-        if (partida.casilla1 == '2' && partida.casilla2 == '2' && partida.casilla3 == '2') return 2;
-        if (partida.casilla4 == '2' && partida.casilla5 == '2' && partida.casilla6 == '2') return 2;
-        if (partida.casilla7 == '2' && partida.casilla8 == '2' && partida.casilla9 == '2') return 2;
-        if (partida.casilla1 == '2' && partida.casilla4 == '2' && partida.casilla7 == '2') return 2;
-        if (partida.casilla2 == '2' && partida.casilla5 == '2' && partida.casilla8 == '2') return 2;
-        if (partida.casilla3 == '2' && partida.casilla6 == '2' && partida.casilla9 == '2') return 2;
-        if (partida.casilla1 == '2' && partida.casilla5 == '2' && partida.casilla9 == '2') return 2;
-        if (partida.casilla3 == '2' && partida.casilla5 == '2' && partida.casilla7 == '2') return 2;
-        else if (partida.casilla1 != '0' && partida.casilla2 != '0' && partida.casilla3 != '0' && partida.casilla4 != '0' && partida.casilla5 != '0' &&
-        partida.casilla6 != '0' && partida.casilla7 != '0' && partida.casilla8 != '0' && partida.casilla9 != '0') return 3;
-    }
+    //8 combinatorias ganadores del jugador
+    if (partida.casilla1 == '1' && partida.casilla2 == '1' && partida.casilla3 == '1') return 1;
+    if (partida.casilla4 == '1' && partida.casilla5 == '1' && partida.casilla6 == '1') return 1;
+    if (partida.casilla7 == '1' && partida.casilla8 == '1' && partida.casilla9 == '1') return 1;
+    if (partida.casilla1 == '1' && partida.casilla4 == '1' && partida.casilla7 == '1') return 1;
+    if (partida.casilla2 == '1' && partida.casilla5 == '1' && partida.casilla8 == '1') return 1;
+    if (partida.casilla3 == '1' && partida.casilla6 == '1' && partida.casilla9 == '1') return 1;
+    if (partida.casilla1 == '1' && partida.casilla5 == '1' && partida.casilla9 == '1') return 1;
+    if (partida.casilla3 == '1' && partida.casilla5 == '1' && partida.casilla7 == '1') return 1;
+    //8 combinatorias ganadores del jugador
+    if (partida.casilla1 == '2' && partida.casilla2 == '2' && partida.casilla3 == '2') return 2;
+    if (partida.casilla4 == '2' && partida.casilla5 == '2' && partida.casilla6 == '2') return 2;
+    if (partida.casilla7 == '2' && partida.casilla8 == '2' && partida.casilla9 == '2') return 2;
+    if (partida.casilla1 == '2' && partida.casilla4 == '2' && partida.casilla7 == '2') return 2;
+    if (partida.casilla2 == '2' && partida.casilla5 == '2' && partida.casilla8 == '2') return 2;
+    if (partida.casilla3 == '2' && partida.casilla6 == '2' && partida.casilla9 == '2') return 2;
+    if (partida.casilla1 == '2' && partida.casilla5 == '2' && partida.casilla9 == '2') return 2;
+    if (partida.casilla3 == '2' && partida.casilla5 == '2' && partida.casilla7 == '2') return 2;
+    else if (partida.casilla1 != '0' && partida.casilla2 != '0' && partida.casilla3 != '0' && partida.casilla4 != '0' && partida.casilla5 != '0' &&
+    partida.casilla6 != '0' && partida.casilla7 != '0' && partida.casilla8 != '0' && partida.casilla9 != '0') return 3;
 }
 
 const tictactoeController = new TicTacToeController();
