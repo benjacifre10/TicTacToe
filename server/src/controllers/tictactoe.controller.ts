@@ -29,8 +29,11 @@ class TicTacToeController {
         });
     }
 
-    private 
 
+}
+
+const calcularJugada = () => {
+    return false;
 }
 
 const tictactoeController = new TicTacToeController();
