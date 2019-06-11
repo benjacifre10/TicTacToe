@@ -13,7 +13,11 @@ export class PartidasService {
     private http: HttpClient
   ) { }
 
-  getGames() {
+  getPartidas() {
     return this.http.get(`${this.API_URI}/tictactoe`);
+  }
+
+  savePartida(partida: Partida) {
+    return this.http.post(`${this.API_URI}/tictactoe`, partida);
   }
 }

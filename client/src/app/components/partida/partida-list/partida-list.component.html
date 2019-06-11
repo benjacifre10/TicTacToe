@@ -2,7 +2,8 @@
   <div class="col-md-4" *ngFor="let partida of partidas">
     <div class="card text-center">
       <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-        {{ partida.resultado }}
+        Partida Nro: {{ partida.id }}
+        Resultado: {{ partida.resultado }}
       </div>
       <p>Partida Creada {{ partida.creada | date: 'dd-MM-yyyy hh:mm:ss'}}</p>
       <p>Partida Terminada {{ partida.terminada | date: 'dd-MM-yyyy hh:mm:ss' }} </p>
